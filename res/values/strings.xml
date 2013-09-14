@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">FlapJackAndroid</string>
+	<string name="prompt">Pick a casino</string>
+	<string-array name="casinos">
+		<item>Bellagio</item>
+		<item>Caesar's Palace</item>
+		<item>MGM Grand</item>
+	</string-array>
+</resources>

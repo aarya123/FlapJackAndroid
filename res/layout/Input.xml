@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+	<Spinner
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/spinner"
+			android:entries="@array/casinos"
+			android:spinnerMode="dropdown" android:prompt="@string/prompt"/>
+	<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".75"
+				android:layout_height="wrap_content"
+				android:text="Number of Decks"/>
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:text="Number of Decks"
+				android:id="@+id/numDecks"/>
+	</LinearLayout>
+	<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".75"
+				android:layout_height="wrap_content"
+				android:text="BlackJack Multiplier"/>
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:text="0"
+				android:id="@+id/bjMultiplier"/>
+	</LinearLayout>
+	<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".75"
+				android:layout_height="wrap_content"
+				android:text="Whether Dealer Hits on Soft 17s"/>
+		<CheckBox
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:id="@+id/soft17s"/>
+	</LinearLayout>
+	<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".75"
+				android:layout_height="wrap_content"
+				android:text="Double After Splitting"/>
+		<CheckBox
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:id="@+id/doubleSplitting"/>
+	</LinearLayout>
+	<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".75"
+				android:layout_height="wrap_content"
+				android:text="Resplitting after Aces"/>
+		<CheckBox
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:id="@+id/resplitAces"/>
+	</LinearLayout>
+	<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".75"
+				android:layout_height="wrap_content"
+				android:text="Number of Games"/>
+		<NumberPicker
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:id="@+id/numGames"
+				android:layout_gravity="center"/>
+	</LinearLayout>
+</LinearLayout>
