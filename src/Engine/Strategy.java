@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class Strategy {
 
     public static HashMap<String, Double> hotnessMap;
-    public static HashMap<String, Double> bettingMap;
+    HashMap<String, Double> bettingMap;
 
     // bettingFunction is an array of length 5; 
 
@@ -19,7 +19,7 @@ public class Strategy {
 
     public Strategy(String strategy_type) {
 
-        System.out.println(strategy_type);
+        //System.out.println(strategy_type);
         hotnessMap = new HashMap<String, Double>();
 
         if (strategy_type.equalsIgnoreCase("Basic Strategy"))
@@ -39,19 +39,19 @@ public class Strategy {
             hotnessMap.put("Q", -1.0);
             hotnessMap.put("K", -1.0);
         } else {
-            hotnessMap.put("A", -0.8862665461377872);
-            hotnessMap.put("2", 0.8754767395547716);
-            hotnessMap.put("3", 1.1280118609466179);
-            hotnessMap.put("4", -0.2748576476997078);
-            hotnessMap.put("5", 0.6847146657102476);
-            hotnessMap.put("6", 2.886921398580731);
-            hotnessMap.put("7", 0.7549035038876444);
-            hotnessMap.put("8", -1.2861682790598536);
-            hotnessMap.put("9", 1.0659929347268373);
-            hotnessMap.put("10", -0.5759288761044206);
-            hotnessMap.put("J", -1.9197111838717347);
-            hotnessMap.put("Q", -1.4491997383971356);
-            hotnessMap.put("K", 1.3426116475470553);
+            hotnessMap.put("A", -0.9726303732021138);
+            hotnessMap.put("2", -0.004706292605272333);
+            hotnessMap.put("3", -0.08435610144119576);
+            hotnessMap.put("4", 1.8449808372042817);
+            hotnessMap.put("5", 3.354715514790913);
+            hotnessMap.put("6", 0.5427470530533602);
+            hotnessMap.put("7", 2.741140155063029);
+            hotnessMap.put("8", -0.6172078062524431);
+            hotnessMap.put("9", -0.77773512061723);
+            hotnessMap.put("10", -1.007584934520013);
+            hotnessMap.put("J", -0.011820494223825584);
+            hotnessMap.put("Q", -1.5230327260255503);
+            hotnessMap.put("K", 1.4175083816178076);
         }
 
         /*
@@ -104,12 +104,18 @@ public class Strategy {
     }
 
     double getBetMultiplier(double hotness) {
-        if (hotness <= 0)
+        if (hotness <= 1)
             return 1;
         else {
-            if (hotness != 1)
-                System.out.println("Hotness not 1 bitch " + hotness);
-            return hotness;
+            //if (hotness != 1)
+            //  System.out.println("Hotness not 1 bitch " + hotness);
+
+            double multip = Math.pow(hotness, 1.3) - 2;
+            if (multip <= 1)
+                multip = 1;
+
+            return multip;
+
         }
     }
 }

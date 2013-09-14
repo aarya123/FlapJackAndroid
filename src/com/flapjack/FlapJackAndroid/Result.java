@@ -11,6 +11,8 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 /**
  * User: AnubhawArya
  * Date: 9/13/13
@@ -41,9 +43,9 @@ public class Result extends FragmentActivity {
         protected void onPostExecute(Session s) {
             activity.findViewById(R.id.loading).setVisibility(View.GONE);
             activity.findViewById(R.id.statistics).setVisibility(View.VISIBLE);
-            ((TextView) activity.findViewById(R.id.profit)).setText(s.getTotalProfit() + "");
-            ((TextView) activity.findViewById(R.id.totWage)).setText(s.getTotalWage() + "");
-            ((TextView) activity.findViewById(R.id.percentWon)).setText(s.getGameWonPercentage() + "");
+            ((TextView) activity.findViewById(R.id.profit)).setText("$" + new DecimalFormat("#.##").format(s.getTotalProfit()));
+            ((TextView) activity.findViewById(R.id.totWage)).setText("$" + new DecimalFormat("#.##").format(s.getTotalWage()));
+            ((TextView) activity.findViewById(R.id.percentWon)).setText(s.getGameWonPercentage() + "%");
             ((TextView) activity.findViewById(R.id.gamesPlayed)).setText(s.getCasino().getNumberOfGames() + "");
             ((ViewPager) activity.findViewById(R.id.pager)).setAdapter(new StatPagerAdapter(Result.this.getSupportFragmentManager()));
         }
