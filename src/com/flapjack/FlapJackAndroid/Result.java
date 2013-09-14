@@ -48,7 +48,7 @@ public class Result extends Activity {
             ((TextView) activity.findViewById(R.id.gamesPlayed)).setText(s.getCasino().getNumberOfGames() + "");
             GraphView.GraphViewData[] data = new GraphView.GraphViewData[s.getCumProfit().length];
             for (int i = 0; i < s.getCumProfit().length; i++)
-                data[i] = new GraphView.GraphViewData(i, s.getCumProfit()[i]);
+                data[i] = new GraphView.GraphViewData(i + 1, s.getCumProfit()[i]);
             LineGraphView temp = new LineGraphView(Result.this, "Total Profit per Game");
             temp.addSeries(new GraphViewSeries(data));
             ((LinearLayout) activity.findViewById(R.id.lineGraphView)).addView(temp);
