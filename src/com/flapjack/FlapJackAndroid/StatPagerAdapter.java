@@ -15,7 +15,7 @@ public class StatPagerAdapter extends FragmentStatePagerAdapter {
     }
 
     public Fragment getItem(int i) {
-        if (i == 0)
+        if (i == 1)
             return new HashMapFragment();
         else
             return new GraphFragment();

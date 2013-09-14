@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
+              android:padding="10dp"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 	<TextView
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:text="Hotness Values"
+			android:textStyle="bold"
+			android:paddingBottom="10dp"
 			android:gravity="center"/>
 	<LinearLayout
 			android:orientation="horizontal"
+			android:paddingBottom="10dp"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center">
@@ -36,6 +40,7 @@
 	</LinearLayout>
 	<LinearLayout
 			android:orientation="horizontal"
+			android:paddingBottom="10dp"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center">
@@ -62,6 +67,7 @@
 	</LinearLayout>
 	<LinearLayout
 			android:orientation="horizontal"
+			android:paddingBottom="10dp"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center">
@@ -88,6 +94,7 @@
 	</LinearLayout>
 	<LinearLayout
 			android:orientation="horizontal"
+			android:paddingBottom="10dp"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center">
@@ -114,6 +121,7 @@
 	</LinearLayout>
 	<LinearLayout
 			android:orientation="horizontal"
+			android:paddingBottom="10dp"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center">
@@ -139,7 +147,7 @@
 				android:id="@+id/ten"/>
 	</LinearLayout>
 	<LinearLayout
-			android:orientation="horizontal"
+			android:orientation="horizontal" android:paddingBottom="10dp"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center">
@@ -165,7 +173,7 @@
 				android:id="@+id/queen"/>
 	</LinearLayout>
 	<LinearLayout
-			android:orientation="horizontal"
+			android:orientation="horizontal" android:paddingBottom="10dp"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center">

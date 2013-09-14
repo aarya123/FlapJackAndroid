@@ -33,7 +33,7 @@ public class Result extends FragmentActivity {
         }
 
         protected Session doInBackground(Casino... params) {
-            session = new Session(params[0], new Strategy());
+            session = new Session(params[0], new Strategy("Counting Strategy"));
             session.playGames();
             return session;
         }
@@ -46,7 +46,6 @@ public class Result extends FragmentActivity {
             ((TextView) activity.findViewById(R.id.percentWon)).setText(s.getGameWonPercentage() + "");
             ((TextView) activity.findViewById(R.id.gamesPlayed)).setText(s.getCasino().getNumberOfGames() + "");
             ((ViewPager) activity.findViewById(R.id.pager)).setAdapter(new StatPagerAdapter(Result.this.getSupportFragmentManager()));
-            /**/
         }
     }
 }

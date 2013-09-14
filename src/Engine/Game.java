@@ -10,7 +10,7 @@ public class Game {
     Shoe shoe;
     double initialAmountWagered, actualAmountWagered, totalProfit;
 
-    Game(Strategy strategy, Casino casino, Shoe shoe, double initialAmountWagered) {
+    public Game(Strategy strategy, Casino casino, Shoe shoe, double initialAmountWagered) {
         this.strategy = strategy;
         this.casino = casino;
         this.shoe = shoe;
@@ -19,19 +19,30 @@ public class Game {
         this.totalProfit = 0.0;
     }
 
-    void setActualAmountWagered(double value) {
+    public Game() {
+    }
+
+    public void setShoe(Shoe shoe) {
+        this.shoe = shoe;
+    }
+
+    public void setInitialAmountWagered(double wager) {
+        this.initialAmountWagered = wager;
+    }
+
+    public void setActualAmountWagered(double value) {
         actualAmountWagered = value;
     }
 
-    double getActualAmountWagered() {
+    public double getActualAmountWagered() {
         return actualAmountWagered;
     }
 
-    double getInitialAmountWagered() {
+    public double getInitialAmountWagered() {
         return initialAmountWagered;
     }
 
-    double getProfit() {
+    public double getProfit() {
         return totalProfit;
     }
 
@@ -48,6 +59,7 @@ public class Game {
     Card hit(Hand hand) {
         Card card = shoe.removeTopCard();
         hand.addCard(card);
+        //System.out.println(card.getRank());
         return card;
     }
 
@@ -79,6 +91,10 @@ public class Game {
             results = "true";
         else if (playerValue < dealerValue)
             results = "false";
+        else if (playerHand.twentyOne() && !playerHand.blackjack() && dealerHand.blackjack())
+            results = "false";
+        else if (dealerHand.twentyOne() && !dealerHand.blackjack() && playerHand.blackjack())
+            results = "true";
 
         return results;
     }
@@ -89,13 +105,15 @@ public class Game {
         double blackjackMultiplier = casino.getBlackjackMultiplier();
         if (won.equals("true")) {
             if (playerHand.blackjack()) {
-                profit = actualAmountWagered * blackjackMultiplier;
+                profit = playerHand.getAmountWagered() * blackjackMultiplier;
             } else {
-                profit = actualAmountWagered;
+                profit = playerHand.getAmountWagered();
             }
+        } else if (won.equals("tie")) {
+            return 0;
         } else {
-            //tie or loss
-            profit = (-1) * actualAmountWagered;
+            //loss
+            profit = (-1) * playerHand.getAmountWagered();
         }
 
         return profit;
@@ -156,14 +174,17 @@ public class Game {
     public Hand playHand(Hand playerHand, Hand dealerHand, Card dealerHiddenCard) {
         Hand newHand = null;
         String move;
-        if (playerHand.isBusted()) {
-        }
+
+        //if (playerHand.isBusted()) {
+        //}
         move = BasicStrategy.nextMove(playerHand, dealerHiddenCard);
+        //move = this.strategy.nextMove();
         if (move.equals("S")) {
             stand(playerHand);
             //playerHand.freeze();
         } else if (move.equals("D")) {
-            setActualAmountWagered(getActualAmountWagered() * 2);
+            setActualAmountWagered(getActualAmountWagered() + playerHand.getAmountWagered()); //reflects doubling the amount wagered for the hand.
+            playerHand.setAmountWagered(playerHand.getAmountWagered() * 2);
             hit(playerHand);
             playerHand.freeze();
         } else if (move.equals("P")) {
@@ -183,7 +204,6 @@ public class Game {
 
     public void play() {
         Hand dealerHand = new Hand(new ArrayList<Card>(), initialAmountWagered);
-
         ArrayList<Hand> playerHands;
         playerHands = new ArrayList<Hand>();
         playerHands.add(new Hand(new ArrayList<Card>(), initialAmountWagered));
@@ -196,14 +216,13 @@ public class Game {
                     Hand newHand = playHand(playerHands.get(i), dealerHand, dealerHiddenCard);
                     if (newHand != null) {
                         playerHands.add(i + 1, newHand);
+                        i++;
                     }
                 }
 
             }
         }
         completeDealerHand(dealerHand, dealerHiddenCard);
-
-
         String won;
         for (Hand playerHand : playerHands) {
             won = won(playerHand, dealerHand);
@@ -211,4 +230,5 @@ public class Game {
         }
 
     }
+
 }

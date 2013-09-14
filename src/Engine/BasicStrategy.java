@@ -10,12 +10,25 @@ public class BasicStrategy {
     public static String nextMove(Hand playerHand, Card dealerCard) {
         int playerIndex = BasicStrategy.getPlayerIndex(playerHand);
         int dealerIndex = BasicStrategy.getDealerIndex(dealerCard);
-        return BasicStrategy.moveInTable(playerIndex, dealerIndex);
+        //System.out.println("Dealer: " + dealerCard.getRank());
+        String move = BasicStrategy.moveInTable(playerIndex, dealerIndex);
+        //System.out.println("Move: " + move);
+        return move;
     }
 
     public static int getPlayerIndex(Hand playerHand) {
         // A, A
         List<Card> cards = playerHand.getCards();
+
+        // DEBUG DEBUG DEBUG
+        //System.out.println("");
+        //String str = "Cards: ";
+        //for(int i=0; i< cards.size(); i++){
+        //	str += cards.get(i).getRank() + ",";
+        //}
+        //System.out.println(str);
+        //System.out.println("Hand value: " + Arrays.toString(playerHand.getValues()));
+
         if (cards.size() == 2 && cards.get(0).getRank().equals("A") && cards.get(1).getRank().equals("A")) {
             return 30;
 
@@ -43,7 +56,7 @@ public class BasicStrategy {
             return 20;
 
             // Doubles
-        } else if (cards.size() == 2 && cards.get(0).getRank().equals(cards.get(1).getRank())) {
+        } else if (cards.size() == 2 && cards.get(0).getRank() == cards.get(1).getRank()) {
             if (Arrays.equals(playerHand.getValues(), new int[]{4}))
                 return 21;
             else if (Arrays.equals(playerHand.getValues(), new int[]{6}))
@@ -63,12 +76,14 @@ public class BasicStrategy {
             else
                 return 0;
         } else {
+
             return Math.abs(Math.min(playerHand.getValues()[0], 17) - 5);
+
         }
     }
 
     public static int getDealerIndex(Card dealerCard) {
-        if (dealerCard.getRank().equals("A"))
+        if (dealerCard.getRank() == "A")
             return 9;
         else
             return dealerCard.getValues()[0] - 2;

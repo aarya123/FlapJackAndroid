@@ -20,6 +20,16 @@ public class Shoe {
         shuffle();
     }
 
+    public Shoe(Strategy strategy) {
+        this.numberOfDecks = 1;
+        this.strategy = strategy;
+        this.hotness = 0;
+    }
+
+    public void setDeck(ArrayList<Card> deck) {
+        this.deck = deck;
+    }
+
     public int size() {
         return deck.size();
     }
@@ -71,8 +81,8 @@ public class Shoe {
     }
 
     public Card removeTopCard() {
-        if (deck.size() == 1)
-            shuffle();
+        //if (deck.size() == 1)
+        //shuffle();
         Card removedCard = deck.remove(deck.size() - 1);
         hotness += strategy.getHottnessForCard(removedCard);
         return removedCard;
