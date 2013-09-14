@@ -3,7 +3,12 @@
           package="com.flapjack.FlapJackAndroid">
 	<uses-sdk android:minSdkVersion="14"/>
 	<application android:icon="@drawable/icon" android:label="@string/app_name">
-		<activity android:name=".Input"/>
+		<activity android:name=".Input">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
 		<activity android:name=".Result"/>
 	</application>
 </manifest>

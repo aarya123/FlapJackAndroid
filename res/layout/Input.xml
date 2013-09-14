@@ -4,13 +4,12 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-
 	<Spinner
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:id="@+id/spinner"
+			android:id="@+id/casinoList"
 			android:entries="@array/casinos"
-			android:spinnerMode="dropdown" android:prompt="@string/prompt"/>
+			android:spinnerMode="dropdown"/>
 	<LinearLayout
 			android:orientation="horizontal"
 			android:layout_width="fill_parent"
@@ -56,7 +55,8 @@
 				android:layout_width="0px"
 				android:layout_weight=".25"
 				android:layout_height="wrap_content"
-				android:id="@+id/soft17s"/>
+				android:id="@+id/soft17s"
+				android:enabled="false"/>
 	</LinearLayout>
 	<LinearLayout
 			android:orientation="horizontal"
@@ -71,7 +71,8 @@
 				android:layout_width="0px"
 				android:layout_weight=".25"
 				android:layout_height="wrap_content"
-				android:id="@+id/doubleSplitting"/>
+				android:id="@+id/doubleSplitting"
+				android:enabled="false"/>
 	</LinearLayout>
 	<LinearLayout
 			android:orientation="horizontal"
@@ -86,7 +87,8 @@
 				android:layout_width="0px"
 				android:layout_weight=".25"
 				android:layout_height="wrap_content"
-				android:id="@+id/resplitAces"/>
+				android:id="@+id/resplitAces"
+				android:enabled="false"/>
 	</LinearLayout>
 	<LinearLayout
 			android:orientation="horizontal"
@@ -97,11 +99,17 @@
 				android:layout_weight=".75"
 				android:layout_height="wrap_content"
 				android:text="Number of Games"/>
-		<NumberPicker
+		<EditText
 				android:layout_width="0px"
 				android:layout_weight=".25"
 				android:layout_height="wrap_content"
+				android:text="100"
 				android:id="@+id/numGames"
-				android:layout_gravity="center"/>
+				android:inputType="number"/>
 	</LinearLayout>
+	<Button
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="Go!"
+			android:id="@+id/goButton"/>
 </LinearLayout>
