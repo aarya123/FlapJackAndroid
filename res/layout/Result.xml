@@ -3,21 +3,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:padding="10dp">
 	<LinearLayout
 			android:orientation="vertical"
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent"
-			android:visibility="gone"
+			android:gravity="center"
 			android:id="@+id/loading">
 		<ProgressBar
 				android:layout_width="fill_parent"
-				android:layout_height="0px"
-				android:layout_weight=".75"/>
+				android:layout_height="wrap_content"/>
 		<TextView
 				android:layout_width="fill_parent"
-				android:layout_height="0px"
-				android:layout_weight=".25"
+				android:layout_height="wrap_content"
 				android:gravity="center"
 				android:text="Calculating..."/>
 	</LinearLayout>
@@ -25,7 +24,7 @@
 			android:orientation="vertical"
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent"
-
+			android:visibility="gone"
 			android:id="@+id/statistics">
 		<LinearLayout
 				android:orientation="horizontal"
@@ -96,8 +95,195 @@
 					android:id="@+id/percentWon"/>
 		</LinearLayout>
 		<LinearLayout
+				xmlns:android="http://schemas.android.com/apk/res/android"
 				android:layout_width="fill_parent"
 				android:layout_height="fill_parent"
 				android:id="@+id/lineGraphView"/>
+		<!--
+<LinearLayout
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+	<TextView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="Hotness Values"
+			android:gravity="center"/>
+	<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center">
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:text="Ace"/>
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:id="@+id/ace"/>
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:text="Two"/>
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:id="@+id/two"/>
+	</LinearLayout>
+	<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center">
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:text="Three"/>
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:id="@+id/three"/>
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:text="Four"
+				android:id="@+id/four"/>
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:id="@+id/four"/>
+	</LinearLayout>
+	<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center">
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:text="Five"/>
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:id="@+id/five"/>
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:text="Six"/>
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:id="@+id/six"/>
+	</LinearLayout>
+	<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center">
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:text="Seven"/>
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:id="@+id/seven"/>
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:text="Eight"/>
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:id="@+id/eight"/>
+	</LinearLayout>
+	<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center">
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:text="Nine"/>
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:id="@+id/nine"/>
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:text="Ten"/>
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:id="@+id/ten"/>
+	</LinearLayout>
+	<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center">
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:text="Jack"/>
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:id="@+id/jack"/>
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:text="Queen"/>
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:id="@+id/queen"/>
+	</LinearLayout>
+	<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center">
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:text="King"/>
+		<TextView
+				android:layout_width="0px"
+				android:layout_weight=".25"
+				android:layout_height="wrap_content"
+				android:id="@+id/king"/>
+	</LinearLayout>
+</LinearLayout>
+
+		-->
 	</LinearLayout>
 </LinearLayout>

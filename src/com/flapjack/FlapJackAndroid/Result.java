@@ -52,6 +52,19 @@ public class Result extends Activity {
             LineGraphView temp = new LineGraphView(Result.this, "Total Profit per Game");
             temp.addSeries(new GraphViewSeries(data));
             ((LinearLayout) activity.findViewById(R.id.lineGraphView)).addView(temp);
+            /*((TextView)activity.findViewById(R.id.ace)).setText(s.getStrategy().hotnessMap.get("A")+"");
+            ((TextView)activity.findViewById(R.id.two)).setText(s.getStrategy().hotnessMap.get("2")+"");
+            ((TextView)activity.findViewById(R.id.three)).setText(s.getStrategy().hotnessMap.get("3")+"");
+            ((TextView)activity.findViewById(R.id.four)).setText(s.getStrategy().hotnessMap.get("4")+"");
+            ((TextView)activity.findViewById(R.id.five)).setText(s.getStrategy().hotnessMap.get("5")+"");
+            ((TextView)activity.findViewById(R.id.six)).setText(s.getStrategy().hotnessMap.get("6")+"");
+            ((TextView)activity.findViewById(R.id.seven)).setText(s.getStrategy().hotnessMap.get("7")+"");
+            ((TextView)activity.findViewById(R.id.eight)).setText(s.getStrategy().hotnessMap.get("8")+"");
+            ((TextView)activity.findViewById(R.id.nine)).setText(s.getStrategy().hotnessMap.get("9")+"");
+            ((TextView)activity.findViewById(R.id.ten)).setText(s.getStrategy().hotnessMap.get("10")+"");
+            ((TextView)activity.findViewById(R.id.jack)).setText(s.getStrategy().hotnessMap.get("J")+"");
+            ((TextView)activity.findViewById(R.id.queen)).setText(s.getStrategy().hotnessMap.get("Q")+"");
+            ((TextView)activity.findViewById(R.id.king)).setText(s.getStrategy().hotnessMap.get("K")+"");*/
         }
     }
 }

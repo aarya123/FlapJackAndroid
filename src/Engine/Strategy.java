@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class Strategy {
 
-    HashMap<String, Double> hotnessMap;
+    public HashMap<String, Double> hotnessMap;
 
     // bettingFunction is an array of length 5;
     public Strategy() {
